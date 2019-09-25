@@ -15,6 +15,9 @@ public class Field extends JPanel {
     }
 
     public void loadImage() {
-        
+        ImageIcon iia = new ImageIcon("apple.png");
+        apple = iia.getImage();
+        ImageIcon iid = new ImageIcon("dot.png");
+        dot = iid.getImage();
     }
 }

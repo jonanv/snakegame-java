@@ -9,6 +9,7 @@ public class Main extends JFrame {
     }
 
     public Main() {
+        add(new Field());
         setTitle("Snake game");
         setLocation(300, 500);
         setSize(320, 345);
