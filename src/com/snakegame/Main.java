@@ -1,8 +1,18 @@
 package com.snakegame;
 
-public class Main {
+import javax.swing.*;
+
+public class Main extends JFrame {
 
     public static void main(String[] args) {
-        System.out.println("Haciendo juego de la serpiente en Java con IntelliJ IDEA");
+        Main window = new Main();
+    }
+
+    public Main() {
+        setTitle("Snake game");
+        setLocation(300, 500);
+        setSize(320, 345);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setVisible(true);
     }
 }
