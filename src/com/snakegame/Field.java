@@ -118,6 +118,7 @@ public class Field extends JPanel implements ActionListener {
         intGame();
         addKeyListener(new FieldKeyListener());
         setFocusable(true);
+        setPreferredSize(new Dimension(WIDTH, WIDTH));
     }
 
     public void loadImage() {
