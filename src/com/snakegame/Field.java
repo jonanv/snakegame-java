@@ -97,9 +97,11 @@ public class Field extends JPanel implements ActionListener {
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(apple, appleX, appleY, this);
-        for (int i = 0; i < dots; i++) {
-            g.drawImage(dot, x[i], y[i], this);
+        if (inGame) {
+            g.drawImage(apple, appleX, appleY, this);
+            for (int i = 0; i < dots; i++) {
+                g.drawImage(dot, x[i], y[i], this);
+            }
         }
     }
 
