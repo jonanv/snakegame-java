@@ -103,6 +103,13 @@ public class Field extends JPanel implements ActionListener {
                 g.drawImage(dot, x[i], y[i], this);
             }
         }
+        else {
+            String str = "Game over";
+            Font f = new Font("Helvetica", Font.BOLD, 14);
+            g.setColor(Color.white);
+            g.setFont(f);
+            g.drawString(str, 125, WIDTH/2);
+        }
     }
 
     public Field() {
