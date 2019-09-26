@@ -21,6 +21,7 @@ public class Field extends JPanel implements ActionListener {
     boolean up = false;
     boolean down = false;
     Timer timer;
+    boolean inGame = true;
 
     void createApple() {
         appleX = new Random().nextInt(WIDTH/DOT_SIZE) * DOT_SIZE;
@@ -39,8 +40,40 @@ public class Field extends JPanel implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+        checkCollisions();
+        checkApple();
         move();
         repaint();
+    }
+
+    void checkApple() {
+        if(x[0] == appleX && y[0] == appleY) {
+            dots++;
+            createApple();
+        }
+    }
+
+    void checkCollisions() {
+        for (int i = dots; i > 0; i--) {
+            if (i > 4 && x[0] == x[i] && y[0] == y[i]) {
+                inGame = false;
+            }
+        }
+        if (y[0] > WIDTH){
+            inGame = false;
+        }
+        if (x[0] > WIDTH){
+            inGame = false;
+        }
+        if (y[0] < 0){
+            inGame = false;
+        }
+        if (x[0] < 0){
+            inGame = false;
+        }
+        if (!inGame) {
+            timer.stop();
+        }
     }
 
     void move() {
