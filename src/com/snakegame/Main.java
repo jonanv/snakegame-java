@@ -1,6 +1,7 @@
 package com.snakegame;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Main extends JFrame {
 
@@ -11,7 +12,7 @@ public class Main extends JFrame {
     public Main() {
         add(new Field());
         setTitle("Snake game");
-        setLocation(300, 500);
+        setLocation(200, 200);
         setSize(320, 345);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
