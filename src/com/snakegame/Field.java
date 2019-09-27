@@ -22,6 +22,7 @@ public class Field extends JPanel implements ActionListener {
     boolean down = false;
     Timer timer;
     boolean inGame = true;
+    int score = 0;
 
     void createApple() {
         appleX = new Random().nextInt(WIDTH/DOT_SIZE) * DOT_SIZE;
@@ -49,6 +50,7 @@ public class Field extends JPanel implements ActionListener {
     void checkApple() {
         if(x[0] == appleX && y[0] == appleY) {
             dots++;
+            score+= 10;
             createApple();
         }
     }
@@ -108,7 +110,13 @@ public class Field extends JPanel implements ActionListener {
             Font f = new Font("Helvetica", Font.BOLD, 14);
             g.setColor(Color.white);
             g.setFont(f);
-            g.drawString(str, 125, WIDTH/2);
+            g.drawString(str, 125, (WIDTH/2) - 10);
+
+            String score = "Score: " + this.score;
+            Font s = new Font("Helvetica", Font.BOLD, 14);
+            g.setColor(Color.white);
+            g.setFont(s);
+            g.drawString(score, 125, (WIDTH/2) + 10);
         }
     }
 
